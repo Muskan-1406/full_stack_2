@@ -1,21 +1,23 @@
+import "./App.css";
 import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate,
 } from "react-router-dom";
 
-import Login from "./pages/login.jsx";
-import Dashboard from "./pages/dashboard.jsx";
-import ProtectedRoute from "./component/protectedroute.jsx";
+import Login from "./pages/login";
+import Dashboard from "./pages/dashboard";
+
+import ProtectedRoute from "./component/protectedroute";
 
 function App() {
   return (
     <BrowserRouter>
+
       <Routes>
 
         <Route
-          path="/login"
+          path="/"
           element={<Login />}
         />
 
@@ -28,14 +30,8 @@ function App() {
           }
         />
 
-        <Route
-          path="/"
-          element={
-            <Navigate to="/login" replace />
-          }
-        />
-
       </Routes>
+
     </BrowserRouter>
   );
 }
